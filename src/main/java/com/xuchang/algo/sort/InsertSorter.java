@@ -5,6 +5,7 @@ import java.util.Arrays;
 /**
  * 插入排序
  * 是将数组中的元素逐一与已经排序好的数据进行比较，再逐一将该数组元素插入适当的位置
+ * 插入排序会造成大量数据的搬移，所以建议在链表上使用
  */
 public class InsertSorter implements Sorter {
     @Override
