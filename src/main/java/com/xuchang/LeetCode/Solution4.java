@@ -22,7 +22,50 @@ import java.util.*;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 class Solution4 {
+    /**
+     * 解法二：进阶解法---数学解法
+     * 通过取整和取余操作获取整数中对应的数字进行比较。
+     * 举个例子：1221 这个数字。
+     * 通过计算 1221 / 1000， 得首位1
+     * 通过计算 1221 % 10， 可得末位 1
+     * 进行比较
+     * 再将 22 取出来继续比较
+     * 动画描述
+     * 作者：MisterBooo
+     * 链接：https://leetcode-cn.com/problems/palindrome-number/solution/dong-hua-hui-wen-shu-de-san-chong-jie-fa-fa-jie-ch/
+     * 来源：力扣（LeetCode）
+     * 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+     * @param x
+     * @return
+     */
     public boolean isPalindrome(int x) {
+        //边界判断
+        if (x < 0) {
+            return false;
+        }
+        int div = 1;
+        //
+        while (x / div >= 10) {
+            div *= 10;
+        }
+        while (x > 0) {
+            int left = x / div;
+            int right = x % 10;
+            if (left != right) {
+                return false;
+            }
+            x = (x % div) / 10;
+            div /= 100;
+        }
+        return true;
+    }
+
+    /**
+     * 获取这个数的每个数字存入到数组中，对数组的数组进行判断
+     * @param x
+     * @return
+     */
+    public boolean isPalindrome2(int x) {
         boolean flag = true;
         if(x<0){
             flag = false;
@@ -53,5 +96,10 @@ class Solution4 {
             i = (i/10);
         }
         return count;
+    }
+
+    public static void main(String[] args) {
+        Solution4 solution4 = new Solution4();
+        solution4.isPalindrome(12211221);
     }
 }
