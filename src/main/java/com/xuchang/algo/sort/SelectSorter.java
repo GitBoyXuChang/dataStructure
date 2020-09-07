@@ -2,7 +2,13 @@ package com.xuchang.algo.sort;
 
 import java.util.Arrays;
 
-
+/**
+ * 选择排序
+ * 平均时间复杂度：O(n^2)
+ * 最好时间复杂度：O(n^2)
+ * 最坏时间复杂度：O(n^2)
+ * 是否稳定：是
+ */
 public class SelectSorter implements Sorter {
 
     @Override

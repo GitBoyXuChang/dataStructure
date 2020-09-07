@@ -2,7 +2,14 @@ package com.xuchang.algo.sort;
 
 import java.util.Arrays;
 
-
+/**
+ * 冒泡排序
+ * 冒泡排序：O(1)
+ * 平均时间复杂度：O(n^2)
+ * 最好时间复杂度：O(n)
+ * 最坏时间复杂度：O(n^2)
+ * 是否稳定：是
+ */
 public class BubbleSorter implements Sorter{
     @Override
     public void sort(int[] arr) {
